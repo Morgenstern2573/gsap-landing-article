@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    body {
+        @apply overflow-hidden h-screen;
+        font-family: 'Be Vietnam Pro', sans-serif;
+    }
+
+    nav {
+        @apply flex p-4 md:py-8 md:px-4 lg:p-12;
+        @apply justify-center items-center gap-4;
+    }
+}
+
+@layer components {
+	nav > img {
+        width: 120px;
+    }
+
+    nav a {
+        @apply underline;
+    }
+
+    .cta {
+        @apply rounded bg-black text-white py-2 px-4;
+    }
+
+    nav .cta {
+        @apply hidden md:inline-block;
+    }
+
+    .nav-links {
+        @apply hidden md:flex gap-4 lg:gap-8 lg:mx-16 xl:mx-20;
+    }
+
+    .row {
+        @apply flex p-4 justify-center md:justify-start;
+        @apply items-center gap-4 md:gap-8;
+        @apply lg:gap-12 text-center md:text-left;
+    }
+
+    .first-row {
+        @apply md:pt-8 lg:pt-16;
+    }
+
+    .bold-text {
+        @apply font-bold text-5xl lg:text-6xl xl:text-8xl;
+    }
+
+    .copy {
+        @apply font-medium;
+    }
+
+    .second-row .bold-text {
+        @apply lg:pl-16 xl:pl-36
+    }
+
+    .first-row .copy {
+        @apply hidden md:flex md:flex-col;
+    }
+
+    .round-text {
+        @apply hidden md:block pl-20 lg:pl-40;
+    }
+
+    .round-text svg{
+        @apply animate-spin-slow;
+    }
+    
+    .round-text textPath {
+        @apply text-xs fill-black;
+    }
+
+    .mobile-row {
+        @apply flex md:hidden flex-col py-4;
+    }
+
+    .pre-loader {
+        @apply absolute z-10;
+        width: 40vw;
+        top: calc(50% - (0.668 * 20vw));
+        left: calc(50% - 20vw);
+    }
+
+    .pre-loader > .overlay {
+        @apply absolute inset-x-0 bottom-0;
+        @apply top-full bg-black bg-opacity-10 -z-0;
+    }
+}
